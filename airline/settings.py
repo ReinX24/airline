@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-falt&z*j1#26#qcxh4_y&0q4_mk%z)9c+(0fjvbhi6yd-o&um-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+]
 
 
 # Application definition

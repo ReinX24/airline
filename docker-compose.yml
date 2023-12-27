@@ -1,0 +1,32 @@
+# To run a docker container, use this command:
+# sudo docker-compose up
+
+# And to use commands on this container, we use these commands:
+
+# Checking if the servers are running properly
+# sudo docker ps
+
+# Going into our container
+# sudo docker exec -it CONTAINER_ID bash -l 
+
+# When we are in our container, we can use commands such as:
+# ls
+# python3 manage.py migrate
+
+# To get out of the container, we use CTRL + D
+version: '3'
+
+services:
+  db:
+    image: postgres 
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password123
+
+  web:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
