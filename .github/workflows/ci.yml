@@ -3,25 +3,11 @@ on: push
 
 jobs:
   test_project:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu_latest
     steps:
     - uses: actions/checkout@v2
     - name: Run Django unit tests
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.11  # Replace 'x' with the desired Python version
-
-    - name: Install dependencies
       run:
-        python -m pip install --upgrade pip
-        pip install django
-
-    - name: Run Django unit tests
-      run:
-        python manage.py test
-      # run:
-      #   python3 -m pip install --upgrade pip
-      #   pip3 install --user django
-      #   python3 manage.py test
+        
+        pip3 install --user django
+        python3 manage.py test
